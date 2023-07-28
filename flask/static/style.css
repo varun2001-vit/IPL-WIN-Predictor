@@ -1,0 +1,66 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select, input[type="number"], input[type="submit"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background-color: #ff4d4d;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.result p {
+    font-size: 18px;
+}
+
+.result .win {
+    color: #4dff4d;
+}
+
+.result .loss {
+    color: #ff4d4d;
+}
