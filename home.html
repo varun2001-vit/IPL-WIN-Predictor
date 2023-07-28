@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL Win Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>IPL Win Predictor</h1>
+    <form method="POST" action="{{ url_for('predict') }}">
+        <label for="battingteam">Select the batting team:</label>
+        <select name="battingteam" id="battingteam">
+            {% for team in teams %}
+            <option value="{{ team }}" {% if team == battingteam %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="bowlingteam">Select the bowling team:</label>
+        <select name="bowlingteam" id="bowlingteam">
+            {% for team in teams %}
+            <option value="{{ team }}" {% if team == bowlingteam %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="city">Select the city where the match is being played:</label>
+        <select name="city" id="city">
+            {% for city in cities %}
+            <option value="{{ city }}" {% if city == selected_city %}selected{% endif %}>{{ city }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="target">Target:</label>
+        <input type="number" name="target" id="target" step="0.01" required>
+        <br>
+        <label for="score">Score:</label>
+        <input type="number" name="score" id="score" step="0.01" required>
+        <br>
+        <label for="overs">Overs Completed:</label>
+        <input type="number" name="overs" id="overs" step="0.1" required>
+        <br>
+        <label for="wickets">Wickets Fallen:</label>
+        <input type="number" name="wickets" id="wickets" step="1" required>
+        <br>
+        <input type="submit" value="Predict Probability">
+    </form>
+    <h2>{{ m1 }}</h2>
+    <h2>{{ m2 }}</h2>
+</body>
+</html>
